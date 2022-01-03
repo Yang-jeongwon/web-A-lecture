@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header-basic-layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      /* color */
+      background-color: salmon;
+    }
+
+    #menu-bar {
+      width: inherit;
+      height: 5vh;
+      background-color: rgba(227, 146, 158, 1);
+
+      /* flex */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #menu-bar ul {
+      list-style-type: none;
+      /* flex */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    #menu-bar ul li {
+      padding: 1vh;
+      color: rgba(227, 146, 158, 1);
+      mix-blend-mode: multiply;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ? emmet code -->
+  <!-- * 
+    header#menu-bar>ul>li*5
+  -->
+  <header id="menu-bar">
+    <ul>
+      <li>workflow</li>
+      <li>data</li>
+      <li>class</li>
+      <li>inheritance</li>
+      <li>initialize</li>
+    </ul>
+  </header>
+</body>
+
+</html>
