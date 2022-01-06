@@ -29,14 +29,28 @@
     .position-fixed {position:fixed;}
     /* display */
 
+    #test {
+      position:relative;
+      top: 100px;
+      left: 100px;
+
+    }
+
+    #test-two {
+      position:sticky;
+      top:300px;
+      left:300px;
+    }
+
+
   </style>
 </head>
 <body>
   <!-- container -->
   <div id="container" class="width-100vw height-100vh bg-col-1" alt="wrap">
     <section class="border-1px-red">sect-1</section>
-    <section class="border-1px-red">sect-2</section>
-    <section class="border-1px-red">sect-3</section>
+    <section id="test" class="border-1px-red">sect-2</section>
+    <section id="test-two" class="border-1px-red">sect-3</section>
     <section class="border-1px-red">sect-4</section>
     
   </div>
