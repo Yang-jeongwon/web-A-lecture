@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>netflix</title>
+
+  <style>
+    /* test-set **********************************************************  */
+    .elem-col-1 {
+      border: 1px solid red;
+    }
+
+    .elem-col-2 {
+      border: 1px solid blue;
+    }
+
+    .elem-col-3 {
+      border: 1px solid green;
+    }
+
+    .elem-col-4 {
+      border: 1px solid gray;
+    }
+
+    .elem-col-5 {
+      border: 1px solid salmon;
+    }
+
+    .elem-col-6 {
+      border: 1px solid black
+    }
+
+    .display-none {
+      display: none;
+    }
+
+    /* reset.css ******************************************************** */
+
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      /* init */
+      background-color: #000;
+      color: #fff
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    /* layout set ************************************************ */
+
+    /* header part */
+    #container header {
+      /* flex */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 가운데 메뉴 container  */
+    .header-menu {
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-menu li {
+      margin: 2vw;
+    }
+
+
+    /* main part */
+
+    #container main {
+      width: 100vw;
+      height: 80vh;
+      background-color: #888;
+      /* content-box position */
+      position: relative;
+
+    }
+
+    #container main .content-box {
+      width: 30vw;
+      height: 50vh;
+      background-color: #ccc;
+      /* position content-box */
+      position: relative;
+      top: 10vw;
+      left: 5vh;
+    }
+
+    #container main .summary {
+
+
+
+
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* span align */
+      flex-direction: column;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="container" class="elem-col-6">
+    <!-- top 가로형 메뉴 -->
+    <header class="elem-col-6">
+      <!-- logo -->
+      <div class="elem-col-5">netflix logo</div>
+      <!-- menu list -->
+      <div class="elem-col-5">
+        <ul class="header-menu">
+          <li>menu-1</li>
+          <li>menu-2</li>
+          <li>menu-3</li>
+          <li>menu-4</li>
+          <li>menu-5</li>
+        </ul>
+      </div>
+      <!-- search -->
+      <div class="elem-col-5">search</div>
+    </header>
+    <!-- ****************************************** -->
+    <main class="elem-col-6">
+      <!-- content-box -->
+      <section class="content-box elem-col-5">
+        <div class="summary elem-col-1">
+          <span>summary</span>
+          <span>summary</span>
+          <span>summary</span>
+          <span>summary</span>
+        </div>
+        <p class="elem-col-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, possimus.</p>
+        <button class="elem-col-5">play</button>
+        <div class="elem-col-5">+my list</div>
+      </section>
+      <!-- bg // 작업한 후 요소 점검 할것 -->
+      <section class="elem-col-5 display-none">background-image</section>
+    </main>
+    <!-- ****************************************** -->
+    <footer class="elem-col-6">
+      <div class="elem-col-5">video-play-button</div>
+      <!-- ::after / watch trailer -->
+    </footer>
+
+  </div>
+</body>
+
+</html>
