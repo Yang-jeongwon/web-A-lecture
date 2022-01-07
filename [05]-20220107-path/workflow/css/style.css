@@ -1,0 +1,32 @@
+/* * assign(할당) */
+body {
+  margin: 0;
+}
+
+
+ul {
+  list-style-type: none;
+  padding-left:0px;
+
+  display:flex;
+  justify-content:flex-end;
+}
+
+ul li {
+  margin-right: 1vw;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight:100;
+}
+
+.gray-color {background-color: gray;}
+
+.test {
+  border:1px solid red;
+}
+
+.test-2 {
+  border:1px solid blue;
+}
