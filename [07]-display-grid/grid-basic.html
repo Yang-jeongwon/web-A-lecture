@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display:grid</title>
+  <style>
+
+    /* 
+    
+    point : 2
+    container에 display 설정
+    
+
+    */
+    #container {
+      display:grid;
+      /* grid 하위 속성 */
+      /* 
+
+        point : 3
+        
+        grid-template-columns(열)
+          - 하위 속성 
+          - 열을 다섯개 설정했다.
+        grid-template-row(행)
+          - columns
+          - 100px씩 일괄 적용했지만, 각각 다르게 적용할 수 있다.
+        
+      
+      
+      
+      */
+      
+      
+      grid-template-columns: 100px 100px 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px 100px 100px;
+      
+    }
+    
+    .item {
+      border: 1px solid red;
+    }
+    
+    </style>
+</head>
+<body>
+  <!-- 
+    
+    
+    point : 1
+    id : container는 실제적인 레이아웃의 역할을 하진 않고, 부모속성(기준속성) 부여 하는 용도로 div 부모태그를 설정한다.
+    
+    float은 item에 부여하지만,
+    flex, grid는 container 에 부여한다.
+    
+    
+  -->
+  <div id="container">
+    <div class="item">item-1</div>
+    <div class="item">item-2</div>
+    <div class="item">item-3</div>
+    <div class="item">item-4</div>
+    <div class="item">item-5</div>
+    
+    <div class="item">2depth</div>
+    <div class="item">2depth</div>
+    <div class="item">2depth</div>
+    <div class="item">2depth</div>
+    <div class="item">2depth</div>
+    
+    <div class="item">3depth</div>
+    <div class="item">3depth</div>
+    <div class="item">3depth</div>
+    <div class="item">3depth</div>
+    <div class="item">3depth</div>
+
+    <div class="item">4depth</div>
+    <div class="item">4depth</div>
+    <div class="item">4depth</div>
+    <div class="item">4depth</div>
+    <div class="item">4depth</div>
+  
+    <div class="item">5depth</div>
+    <div class="item">5depth</div>
+    <div class="item">5depth</div>
+    <div class="item">5depth</div>
+    <div class="item">5depth</div>
+  
+    <div class="item">6depth</div>
+    <div class="item">6depth</div>
+    <div class="item">6depth</div>
+    <div class="item">6depth</div>
+    <div class="item">6depth</div>
+    
+    
+  </div>
+</body>
+</html>
