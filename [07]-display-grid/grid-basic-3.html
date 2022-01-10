@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display:grid</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      /* container를 가운데 정렬하기 위해 부모인 body 태그에 flex 속성 할당 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      display: grid;
+      /* fr : fraction 이라는 grid의 단위로  */
+      /* 아래는 1:1:1:1:1 비율로 설정하겠다는 의도 */
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+      /* point : 1 */
+      /* margin 처럼 grid 칸마다 margin 처럼 여백을 둘수도 있다. */
+      row-gap: 1vw;
+      column-gap: 1vh;
+
+      background-color: #888;
+    }
+
+    .item {
+      /* border: 1px solid red; */
+      background-color: #ddd;
+      margin: 1vw;
+      text-align: center;
+    }
+
+
+    /* container의 첫번째 자식 div 선택 */
+    #container div:nth-child(1) {
+      /* 세로줄(column) 첫번째 부터 다섯번째까지의 칸의 '열'을 포함시키겟다. */
+      grid-column-start: 1; /* 시작열 */
+      grid-column-end: 5; /* 끝열 */
+      /* 가로줄(row) */
+      grid-row-start: 1; /* 시작행 */
+      grid-row-end: 3;  /* 끝행 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    flex와 grid는 container + item
+    부모태그와 자식태그를 적절히 사용해야하는 요건이 있다.
+    레이아웃용 속성이기떄문에
+    하위속성에 다양한 레이아웃용 속성(attribute)을 활용할 수 있다.
+
+
+
+
+    -->
+
+
+
+
+  <div id="container">
+    <div class="item">item-1</div>
+    <div class="item">item-2</div>
+    <div class="item">item-3</div>
+    <div class="item">item-4</div>
+    <div class="item">item-5</div>
+    <div class="item">item-6</div>
+    <div class="item">item-7</div>
+    <div class="item">item-8</div>
+    <div class="item">item-9</div>
+    <div class="item">item-10</div>
+
+  </div>
+</body>
+
+</html>
