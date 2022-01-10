@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>variable</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+
+    .a {
+      background-color: salmon;
+    }
+
+    .b {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="a"></div>
+  <div class="b"></div>
+
+  <script>
+    // 변수 선언을 통해 div 태그들을 선택자처럼 사용하겠다.
+    const a = document.querySelector('.a');
+    const b = document.querySelector('.b');
+
+
+
+    a.addEventListener('click', function() {
+      b.style.backgroundColor = "blue";
+      b.style.width = "200px";
+      b.style.height = "200px";
+      b.style.transition = "2s";
+    });
+
+  </script>
+</body>
+
+</html>
