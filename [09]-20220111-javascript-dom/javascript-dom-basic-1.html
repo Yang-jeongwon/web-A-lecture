@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">this is division</div>
+  <script>
+
+    const container = document.querySelector("#container");
+    // 1. container 라는 이름의 '상수'를 만들었다.
+    // 2. '문서 객체'에 지원하는 querySelector라는 함수(메서드)를 활용해 문서에 있는 아이디값 #container을 selecting 했다.
+    // 3. css 레벨에서는 selector라 통칭하고, javascript 레벨에서는 조금 더 나아가 '식별자(identifier)'라 부른다.
+    // 4. 결과적으로 html 문서에 작성한 div#container를 자바스크립트로 직접제어하기 위해 식별했다.
+    // ex> docuement.querySelector("#container"); <-- 자바스크립트 식별
+    // ex> $("#container") <-- 제이쿼리 식별
+    console.log(container);
+    console.dir(container);
+
+
+
+  </script>
+</body>
+</html>
