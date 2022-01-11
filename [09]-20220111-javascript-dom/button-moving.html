@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      padding: 0;
+      margin:0;
+    }
+    #container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ddd;
+      /* center position */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      /* column align */
+      flex-direction:column;
+    }
+    #container button {
+      width: 10vw;
+      height: 5vh;
+    }
+    #target {
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+      margin-bottom : 10vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="target"></div>
+    <div id="button">
+      <button id="left-move">left-move!</button>
+      <button id="right-move">right-move!</button>
+    </div>
+  </div>
+  <!-- javscript command -->
+  <script>
+    // initialize
+    const container = document.querySelector('#container');
+    const target = document.querySelector('#target');
+    const leftMove = document.querySelector('#left-move');
+    const rightMove = document.querySelector('#right-move');
+
+
+    console.dir(target);
+    // style setup
+
+
+
+    let currentValue = 0;
+
+
+    leftMove.addEventListener('click', function() {
+      currentValue = currentValue + 10;
+      target.style.marginRight = currentValue + 'px';
+      console.log(currentValue);
+    });
+
+    rightMove.addEventListener('click', function() {
+      currentValue = currentValue - 10;
+      target.style.marginRight = -(currentValue) + 'px';
+      console.log(currentValue);
+    });
+    
+    
+
+
+  </script>
+</body>
+</html>
