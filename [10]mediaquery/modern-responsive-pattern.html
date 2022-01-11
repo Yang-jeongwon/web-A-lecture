@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>modern-responsive-web</title>
+  <style>
+    /* 초기설정 (initialize)만 스타일 */
+    html, body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: #222;
+    }
+
+    body {
+      width:100vw;
+      height: 100vh;
+      /* 최상위 부모격인 body 태그에 화면전환 속성 간단하게 부여 */
+      transition:1s;
+    }
+
+    /* 브라우저 가로폭이 768이상 ~ 1024이하 일때 스타일링 */
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+      body {
+        background-color: #fff;
+      }
+    }
+    /* 브라우저 가로폭이 320이상 ~ 728 이하 일떄 스타일링 */
+    @media all and (min-width: 320px) and (max-width: 728px) {
+      body {
+        background-color: salmon;
+      }
+    }
+
+    /* 
+    
+    모바일환경을 최우선으로 디자인하기 때문에 레이아웃을 단순하게 설정하는 경향이 있다.
+    레이아웃이 단순해질수록 주요 컨텐츠 퀄리티 및 디테일에 집중할 수 있게 제작자 환경이 만들어진다.
+
+    
+    */
+
+
+  </style>
+</head>
+<body>
+  
+
+
+  
+</body>
+</html>
