@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    /* reset */
+
+    html, body, ul {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+/* container(부모태그) fixed 클래스 div */
+
+.fixed {
+      width: 100vw;
+      height: 30vh;
+      background-color: beige;
+
+    /* ul 태그 두개를 가로 배치 하고 싶어서 부모에게 flex 속성 부여 */
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+
+    }
+
+    /* 매장사진 부분 li 선택 */
+.left li {
+  width: 300px;
+  height: 100px;
+  background-color:seagreen;
+}
+  /* rigth 클래스의 자식 li 태그 두개 모두 선택 */
+.right li {
+  width: 200px;
+  height: 45px;
+  background-color:chocolate;
+  margin-bottom:5px;
+  margin-left:10px;
+}
+
+
+  </style>
+</head>
+<body>
+  
+  <!-- 
+
+    작업확인했을때 강사의 주안점
+    1. 부모자식태그가 적절히 선택되었는지
+    2. 선택자가 편하게 선택되었는지
+    3. 선택자가 이것저것 꼬여있지는 않은지
+
+
+   -->
+
+
+  <div class="fixed">
+    <ul class="left">
+      <li>매장사진</li>
+    </ul>
+    <ul class="right">
+      <li>창업안내</li>
+      <li>기사안내</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>
