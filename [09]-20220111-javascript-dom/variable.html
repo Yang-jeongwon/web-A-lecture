@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="wrap">this is text</div>
+
+  <script>
+    var wrap = document.querySelector(".wrap");
+    // 자바스크립트야 "문서"에 클래스 .wrap 를 가져와줄래? 이름붙여줄께 wrap라는 걸로
+    // 내가 wrap라는 단어를 쓰면 너는 저 문서에 어쩌고를 가져와줄래?
+    // console.log(document.querySelector(".wrap"));
+    // console.log(wrap);
+    console.dir(wrap); // ★★★★★★★★★★ 객체속에있는 알맹이를 찾는 과정 
+    console.log(wrap.textContent);
+
+
+
+
+
+    wrap.addEventListener("keyup", function () {
+      if(window.event.keyCode == "13") {
+        alert('test');
+      }
+      // 내가 지정한거에 클릭 동작을 제어하고 싶어.
+      // 제어할 내용은 아래 {} 중괄호에 있으니까 동작시켜봐
+      wrap.textContent = "나는 날개달린 호랑이다";
+      wrap.style.color = "red";
+      wrap.style.margin = "100px";
+      wrap.style.backgroundColor = "skyblue";
+    });
+  
+  
+  
+  </script>
+</body>
+
+</html>

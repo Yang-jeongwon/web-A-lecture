@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    #wrap {
+      color:brown;
+    }
+
+    .on {
+      background-color: blue;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">i am tiger</div>
+
+  <script>
+    var wrap = document.querySelector("#wrap");
+    console.dir(wrap);
+
+    wrap.addEventListener("click", function() {
+// hasClass() , addClass(), removeClass()
+      wrap.classList.toggle('on');
+// --------------------------------------------- 
+      if(wrap.classList.contains("on")) {
+        wrap.classList.remove("on");
+      } else {
+        wrap.classList.add("on");
+      }
+    });
+
+
+
+  </script>
+
+</body>
+</html>

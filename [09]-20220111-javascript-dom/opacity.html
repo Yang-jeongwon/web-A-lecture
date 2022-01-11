@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">hello</div>
+  <script>
+    var wrap = document.querySelector("#wrap");
+    // 자바스크립트에서 선택자 만들고 직업 스타일링 제어
+    var opacityValue = 0;
+    wrap.style.opacity = opacityValue;
+    wrap.addEventListener("click", function() {
+      opacityValue = opacityValue + 0.1;
+      console.log(opacityValue);
+      wrap.style.opacity = opacityValue;
+    });
+
+
+  </script>
+
+</body>
+</html>

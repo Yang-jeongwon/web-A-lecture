@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    #target {display:none;}
+
+  </style>
+</head>
+<body>
+  <div id="button">i am tiger</div>
+  <div id="target">actually i was cat</div>
+  <script>
+    var button = document.querySelector("#button");
+    // console.log(button); // 디버깅 하나 끝냄 
+    var target = document.querySelector("#target");
+    // console.log(target);
+    // console.dir(target);
+
+    // 자바스크립트야 내가 button이라는 걸 누르면 target이라는 것을 무언가 바꾸어줄래?
+    button.addEventListener('click', function() {
+      // console.log(target.style.display); // 얘는 빈칸이 뜨네
+      if(target.style.display === "") {
+        // 값이 같으면 참true
+        target.style.display = 'block';
+        // 만약에 타겟 디스플레이값이 "빈칸" 이면 block으로 바꿔줘
+      } else if(target.style.display === "block") {
+        target.style.color = "blue";
+        // console.log(target.style.display);
+      } else if(target.style.color === "blue") {
+        target.style.display = "none";
+      }
+    })
+
+
+  </script>
+</body>
+</html>
