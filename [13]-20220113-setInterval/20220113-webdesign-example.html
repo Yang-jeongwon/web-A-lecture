@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20220103 webdesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* reset */
+    html,
+    body,
+    h1 {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* font-set */
+    h1,
+    p {
+      font-family: 'Roboto Condensed', sans-serif;
+      color: #333;
+      mix-blend-mode: multiply;
+    }
+
+
+    /* **** ***** */
+    #container {
+      width: 100vw;
+      height: 100vh;
+      background: rgb(40, 42, 55);
+      background: linear-gradient(0deg, rgba(40, 42, 55, 1) 0%, rgba(54, 71, 103, 1) 100%);
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container section {
+      width: 50vw;
+      height: 40vh;
+      filter: blur(2px);
+    }
+
+    #container section h1 {
+      color: #888;
+    }
+
+    #container section p {
+      text-align: justify;
+    }
+
+    .transition {
+      transition: 1s
+    }
+
+    ;
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+    <section class="transition">
+      <h1>Lorem, ipsum dolor.</h1>
+      <p>
+        Lorem ipsum dolor sit amet c1`23onsectetur adipisicing elit. Provident ex modi officia, a aut esse odit dolorem
+        in
+        incidunt quia quaerat totam excepturi molestias earum aperiam ullam, dolor, delectus sunt?
+        Quibusdam maxime veniam inventore reprehenderit dolore delectus ut dolor explicabo a cumque non excepturi animi
+        consectetur eos saepe fugit in, illo odio. Nostrum quas doloribus cumque blanditiis voluptatum odit dignissimos?
+        Quis natus harum eum asperiores necessitatibus ipsum dolores aperiam itaque, deserunt ab enim? Perspiciatis
+        fugit saepe mollitia minus possimus ratione voluptatibus suscipit rem sed, eveniet, exercitationem quod!
+        Sapiente, fugit doloremque.
+        Ut eveniet nesciunt officiis corrupti. Exercitationem aut iusto odit inventore beatae corporis illum minima
+        rerum suscipit nihil cumque rem sapiente vel, repudiandae voluptatum nesciunt vero fugiat? Quos sit et
+        exercitationem?
+        Nisi repellat laborum quibusdam nemo, accusamus, reiciendis, a facilis quos nobis voluptatem corrupti placeat
+        impedit quisquam dolore debitis sunt excepturi deserunt. Itaque delectus hic eos reiciendis molestiae.
+        Repudiandae, perferendis vel?
+        Modi cum sunt eius, error accusantium ipsum. Fugiat impedit facere possimus ea ipsam in quisquam facilis aut
+        eveniet nobis voluptatum sapiente quos saepe rerum quia sit, qui non incidunt? Non?
+        Cum perferendis, unde eaque suscipit adipisci dolore distinctio inventore quas magnam odio qui incidunt tenetur
+        cumque debitis excepturi ducimus deleniti esse doloribus molestiae veniam vel assumenda rerum aliquam?
+        Cupiditate, exercitationem.
+        Quam impedit recusandae tempore qui ea quidem saepe distinctio doloribus temporibus id illum, dolore neque
+        sapiente necessitatibus! Explicabo, esse corrupti! Consequuntur at ea eos esse saepe blanditiis quisquam
+        corrupti nobis!
+        Aliquid repudiandae dicta dolorem corrupti, autem error natus enim, impedit officiis voluptatum velit ea
+        praesentium, inventore nobis suscipit officia! Necessitatibus error nam hic, eos ducimus itaque libero atque
+        iure asperiores.
+        Commodi pariatur est sit at quia odio expedita fugit minima ducimus dolores eveniet enim obcaecati aut, ipsum ut
+        magni non natus! Temporibus, necessitatibus recusandae nesciunt culpa aliquam odio atque neque.,m
+      </p>
+    </section>
+
+  </div>
+
+  <script>
+    const mainText = document.querySelector("#container section");
+    const mainTextP = document.querySelector("#container section p");
+    mainText.addEventListener("click", function () {
+      mainText.style.filter = "blur(0px)";
+      mainTextP.style.color = "#ddd";
+      mainTextP.style.transition = "1s";
+    });
+    mainText.addEventListener("mouseout", function () {
+      mainText.style.filter = "blur(3px)";
+      mainTextP.style.color = "#444";
+      mainTextP.style.transition = "1s";
+    });
+  </script>
+</body>
+
+</html>
