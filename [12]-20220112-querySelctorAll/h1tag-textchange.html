@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">hello</h1>
+  <script>
+    const title = document.querySelector("#title");
+    const setText = "공욱재 미남";
+    
+    title.addEventListener("click", function() {
+      title.textContent = setText;
+      document.body.style.backgroundColor = "black";
+      title.style.color = "white";
+    });
+
+    console.dir(title);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>element-node</title>
+</head>
+<body>
+  <script>
+    const body = document.querySelector("body");
+    const makeDiv = document.createElement("div");
+    const makeButton = document.createElement("button");
+    makeButton.textContent = "click";
+    let textNode = "hello";
+    makeDiv.textContent = textNode;
+    body.appendChild(makeDiv);
+    body.appendChild(makeButton);
+
+    const getDiv = document.querySelector("div");
+    getDiv.style.color = "red";
+
+    getDiv.addEventListener("click", function() {
+      textNode = "bye";
+      makeDiv.textContent = textNode;
+    })
+
+
+  </script>
+</body>
+</html>
