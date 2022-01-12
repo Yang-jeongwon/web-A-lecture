@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="container">
+    <li class="items">items-1</li>
+    <li class="items">items-2</li>
+    <li class="items">items-3</li>
+    <li class="items">items-4</li>
+    <li class="items">items-5</li>
+    <li class="items">items-6</li>
+    <li class="items">items-7</li>
+    <li class="items">items-8</li>
+    <li class="items">items-9</li>
+    <li class="items">items-10</li>
+    <li class="items">items-11</li>
+    <li class="items">items-12</li>
+    <li class="items">items-13</li>
+    <li class="items">items-14</li>
+    <li class="items">items-15</li>
+    <li class="items">items-16</li>
+    <li class="items">items-17</li>
+    <li class="items">items-18</li>
+    <li class="items">items-19</li>
+    <li class="items">items-20</li>
+    <li class="items">items-21</li>
+    <li class="items">items-22</li>
+    <li class="items">items-23</li>
+    <li class="items">items-24</li>
+    <li class="items">items-25</li>
+    <li class="items">items-26</li>
+    <li class="items">items-27</li>
+    <li class="items">items-28</li>
+    <li class="items">items-29</li>
+    <li class="items">items-30</li>
+  </ul>
+
+  <script>
+    const items = document.querySelectorAll('.items');
+    console.log(items);
+    // items[9].style.color = "red";
+
+    for(let i = 0; i < items.length; i++) {
+      items[i].style.color = "red";
+      items[i].style.border = "1px solid red";
+      console.log("i값" + i);
+    }
+
+  </script>
+</body>
+</html>

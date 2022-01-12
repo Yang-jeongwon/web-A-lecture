@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1 id="title">hello</h1>
+  
+  <script>
+
+    var title = document.querySelector('#title');
+    console.dir(title);
+    title.style.color = "blue"; 
+    var borderValue = 1;
+    title.style.border = borderValue + "px solid red";
+
+    setTimeout(function() {
+      title.style.color = "red";
+      borderValue = 30;
+      title.style.border = borderValue + "px solid red";
+    }, 3000);
+
+  </script>
+</body>
+</html>
