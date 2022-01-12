@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+
+  <style>
+    /* reset */
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* background-image-set */
+
+
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      /* image set */
+      /* background-image: url(./moonlight-film.jpg);
+      background-size: cover;
+      background-position: 80%; */
+      /* position */
+      position: relative;
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #gnb {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 5vh;
+      z-index: 1;
+    }
+
+    #main-menu {
+      /* flex */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+      color: white;
+    }
+
+    #main-menu li {
+      opacity: 0.5;
+    }
+
+
+    #container section {
+      top: 0;
+      width: 30vw;
+      height: 50vh;
+      text-align: justify;
+      margin-left: -40vw;
+    }
+
+    #color-change {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      /* background-color: salmon; */
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+      transition: 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <header id="gnb">
+      <ul id="main-menu">
+        <li class="menu-items">menu-items-1</li>
+        <li class="menu-items">menu-items-2</li>
+        <li class="menu-items">menu-items-3</li>
+        <li class="menu-items">menu-items-4</li>
+        <li class="menu-items">menu-items-5</li>
+      </ul>
+    </header>
+    <div id="color-change"></div>
+    <section id="content">
+      <h1>hello</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa architecto molestias at quibusdam eveniet
+        obcaecati tenetur, quam, laborum quos nam commodi incidunt eos nesciunt reiciendis quo quas omnis voluptate
+        provident!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum alias porro ipsum repellendus, molestiae dolorem
+        corrupti mollitia sunt soluta corporis minus beatae ab incidunt quaerat cupiditate velit dolorum id similique?
+        Quibusdam reprehenderit consectetur sit quos dolor reiciendis commodi velit cum ducimus, vitae laudantium
+        officiis temporibus ipsam modi. Corrupti eos ratione, sapiente quibusdam alias repellendus quidem est,
+        reprehenderit rem rerum vel.
+        Ea distinctio iure ab doloremque rerum aliquid dignissimos optio aliquam! Necessitatibus corporis totam commodi
+        deserunt voluptatibus nisi atque optio. Animi numquam amet cum! Quasi, atque eaque? Officia pariatur aliquam
+        laboriosam.
+      </p>
+    </section>
+  </div>
+
+  <script>
+    const colorChange = document.querySelector('#color-change');
+    const colorSetList = ["#F8865C", "#D96150", "#F0646E", "#D9509E", "#F35CF8"];
+    let indexValue = 0;
+    // javascript level styling
+    colorChange.style.backgroundColor = colorSetList[indexValue];
+
+    
+    // event handle
+    colorChange.addEventListener('click', function () {
+      if (indexValue < colorSetList.length) {
+        indexValue++;
+        colorChange.style.backgroundColor = colorSetList[indexValue];
+      } else {
+        indexValue = 0;
+      }
+    })
+  </script>
+</body>
+
+</html>
