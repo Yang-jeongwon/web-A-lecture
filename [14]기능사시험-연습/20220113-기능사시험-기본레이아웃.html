@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    html, body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width: 600px;
+      /* height: 800px; */
+      border: 1px solid red;
+    }
+
+    #container>div:nth-child(1) {
+      width: inherit;
+      height: 100px;
+      background-color: salmon;
+    }
+
+    #container>div:nth-child(2) {
+      width: inherit;
+      height: 200px;
+      background-color: blue;
+
+    }
+
+    #container>div:nth-child(3) {
+      width: inherit;
+      height: 100px;
+      background-color: darkcyan;
+    }
+
+    #thumnail div {
+      width: 200px;
+      height:inherit;
+      float:left;
+    }
+
+    #thumnail div::after {
+      content:"";
+      clear:both;
+    }
+    #thumnail div:nth-child(1){background-color: #ddd;}
+    #thumnail div:nth-child(2){background-color: cadetblue;}
+    #thumnail div:nth-child(3){background-color:  darkgreen;}
+
+    #container>div:nth-child(4) {
+
+      width: inherit;
+      height: 100px;
+      background-color: salmon;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div>header</div>
+    <div>slider</div>
+    <div id="thumnail">
+      <div>thum-1</div>
+      <div>thum-2</div>
+      <div>thum-3</div>
+    </div>
+    <div>footer</div>
+  </div>
+</body>
+
+</html>
