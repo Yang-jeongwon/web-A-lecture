@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mobile-layout-basic</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: #ddd;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    #menu {
+      width: 20vw;
+      height: 20vw;
+      border-radius: 10vw;
+      background-color: #fff;
+    }
+
+    #menu ul {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #menu ul li {
+      width: 20%;
+      height: 20%;
+      /* border-radius가 50%인 값이 어디에서 기준되는지 확인해볼 것 */
+      border-radius: 50%;
+      background-color: salmon;
+      margin: 1vw;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 
+
+  작업 순서 : 1
+  1. html 마크업을 통해서 구상한 구조를 먼저 작업한다.
+  2. 간단하게 필요한 모양새만 빠르게 css로 스타일링한다.
+  3. 만들고자 하는 인터렉션을 '기본형'으로 만들어가며 작업한다.
+
+ -->
+
+
+  <div id="container">
+    <div id="menu">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    // init
+    const handler = document.querySelector("#menu ul");
+    // handler라는 이름으로 ul 태그를 식별자(idenfier) 만들었다.
+    console.dir(handler);
+    // 식별자로 만든 변수 handler의 구조를 console.dir()로 확인해 자식태그인 li를 찾았다.
+    console.log(handler.children);
+    // 제대로 자식태그<li> 를 찾았는지 다시한번 검사했다.
+    // 검사 결과는 NodeList 라는 배열형식의 li 태그 3개가 추출 된다.
+
+
+    handler.addEventListener("click", function () {
+      // 확인번호 1: ul태그 식별자인 handler에 이벤트를 설치 했다. "클릭"
+
+
+
+      let hasCheck = handler.classList.contains('on');
+      // 확인번호 3 : 클래스를 활용할 예정
+      // handler(ul 태그)의 클래스 속성중 'on' 이라는 클래스가 있는지 검사하기 위해 hasCheck 라는 변수에 담았다.
+      // jQuery에서 사용하는 hasClass('on')와 동일하다.
+
+
+
+      let getItems = handler.children;
+      // 확인번호 2 : getItems 라는 이름으로 ul 태그의 자식 li 들을 모두 선택했다.
+      if (hasCheck === true) {
+      // 확인번호 4 : 조건식 설정
+      // if문의 조건식을 사람말로 풀면
+      // handler(ul태그)에 class 중 on 이라는 것이 존재하면 참 조건식
+
+        handler.classList.remove('on');
+        // 존재하는 경우 실행하는 것이기 때문에 반드시 on 클래스가 존재한다. 
+        // 다시 지우는 명령
+
+
+        for (let i = 0; i < getItems.length; i++) {
+        // for() 반복문을 사용하여 li태그 모두에게 스타일링을 진행했다.
+          getItems[i].style.backgroundColor = "salmon";
+          getItems[i].style.marginLeft = "";
+          // = ""; <-- 라고 사용한것은 마치 값을 없애겠다는 뜻과 비슷하다.
+          getItems[i].style.transition = "1s";
+        }
+
+        // 확인번호 5 : 개별 li 태그에 별도로 스타일링 했다.
+        // 설명 : 아래의 방식은 좋은 방식이 아니다. 읽히게 하기 위해 하드코딩 한것
+        getItems[0].style.marginBottom = "";
+        getItems[0].style.backgroundColor = "";
+        getItems[2].style.marginTop = "";
+
+      } else {
+        // 확인번호 6 : 참조건식이 아닌 거짓인 경우
+        handler.classList.add('on');
+        // 무조건 class에 on 없다는 전제이기때문에 확정적으로 on을 붙여주는 명령 진행
+        
+        for (let i = 0; i < getItems.length; i++) {
+          getItems[i].style.backgroundColor = "black";
+          getItems[i].style.marginLeft = "30vw";
+          getItems[i].style.transition = "1s";
+        }
+        getItems[0].style.marginBottom = "10vw";
+        getItems[0].style.backgroundColor = "red";
+        getItems[2].style.marginTop = "10vw";
+      }
+    });
+  </script>
+</body>
+
+</html>
