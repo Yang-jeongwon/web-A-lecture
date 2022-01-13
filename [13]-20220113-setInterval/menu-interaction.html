@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    html, body, ul {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width:100vw;
+      height:5vh;
+      background-color:sandybrown;
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+      list-style-type: none;
+    }
+
+    #menu {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <ul id="container">
+    <li>공욱재</li>
+    <li>박재희</li>
+    <li>이화연</li>
+    <li>김한나</li>
+    <li>강효정</li>
+  </ul>
+  <div id="menu">Lorem, ipsum dolor.</div>
+  <script>
+    const container = document.querySelector("#container");
+    const menu = document.querySelector("#menu");
+
+    // 변수를 써서 숫자를 꺼내를 꺼내왔다.
+    let widthValue = 0;
+    // css를 거치지 않고 js로 직접 스타일링 했다.
+    menu.style.width = widthValue + "px";
+    menu.style.overflow = "hidden";
+
+    // 1. 클릭이벤트 -> 자동실행 -> 변수의 값을 활용 기준점으로 활용 -> 제어 
+    container.addEventListener("click", function() {
+      let timer = setInterval(function() {
+        if(widthValue < 300) {
+          widthValue = widthValue + 1;
+          menu.style.width = widthValue + "px";
+          menu.style.height = widthValue + "px";
+          container.classList.add('on');
+        } else {
+          clearInterval(timer);
+        }
+      }, 16);
+    });
+
+
+
+
+
+  </script>
+</body>
+</html>
