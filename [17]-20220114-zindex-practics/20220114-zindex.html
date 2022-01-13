@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width: 100vw;
+      height: 500vh;
+      background-color: #222;
+    }
+
+    #hamburger-menu {
+      /* position */
+      position: fixed;
+      top: 5vh;
+      right: 5vw;
+    }
+
+    #hamburger-menu div {
+      width: 3vw;
+      min-width:50px;
+      height: 0.5vh;
+      min-height:5px;
+      border-radius: 0.5vw;
+      background-color: #ddd;
+      margin: 0.5vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="hamburger-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script>
+    const container = document.querySelector("#container");
+  </script>
+</body>
+
+</html>
