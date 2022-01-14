@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>이름이 있는 함수 vs 이름이 없는 함수</h1>
+
+  <script>
+    // example - 1
+
+    // function statement, function declaration
+    // 이름이 있는 함수 = 기명함수
+    function exampleOne(a, b) {
+      return a + b;
+    }
+    // function call
+    exampleOne(1, 2);
+
+    // anonymous function (이름이 없는함수 = 익명함수)
+    const exampleTwo = function (a, b) {
+      return a + b;
+    }
+    /*
+    위 exampleTwo 함수설명
+    
+    프로그래밍에서 = 이퀄표시는 오른쪽항을 왼쪽항에 대입시키는 것이기 때문에
+    위의 exampleTwo 이름은 엄밀히 변수(상수) 이다.
+    오른쪽항에 있는 함수는 '이름이 없다'
+    
+    결과적으로는 exampleOne과 동일한 구조이지만, 학습용이 아닌 일반적 인터넷에 올라와있는 코드를 보면
+    위의 exampleTwo의 방식을 훨씬더 많이 사용하는 것을 알수 있다. 이는 보안상의 문제로 함수 이름을 가리는 복합적인 문제와
+
+    함수안의 함수, 혹은 함수의 매개변수로서의 함수일때 등 사용처가 제작할때 편리하다.
+    대표적인 익명함수가 바로 addEventListener이다. addEventListener('이벤트타입', function() {});
+    알고리즘 규칙상 "동작할 알고리즘이 필요한 것일뿐 굳이 이름이 필요없기 때문이다."
+    -> 물론 이름을 넣어서 사용할 수도 있다. 
+
+    */
+
+    // example - 2
+
+    const exampleThree = (a, b) => {
+      return a + b;
+    }
+
+    /*
+
+    위의 exampleThree 도 동일한 함수이다. 이러한 코딩 패턴을 화살표함수, arrow function 이라고 부르며 똑같이 익명함수이다.
+    기본 기능은 동일하지만, 특수한 문법을 사용하면 약간 사용법이 달라지나 초급수준에서는 동일하다고 보아도 무방하다.
+
+    만들어진 경위 : 개발자들이 간단하게 함수를 만들어서 사용해야 하는데, 매번 function 이라는 단어를 쓰는 것이 귀찮고 불편하기 때문에 최신버전에서 축약시킨 것도 지원한다.
+
+    */
+
+    const exampleFour = a => {
+      return console.log(a);
+    }
+
+    // 심지어 화살표함수는 매개변수가 한개일때 소괄호조차도 사용하지 않을 수 있다.
+
+    // 화살표함수와 위의 기명함수, 익명함수는 본질적으로 동일한 함수 역할 을 하기때문에 위와 같은 패턴을 확인했는데 해석하기 어려울때
+    // 본인이 잘 알고 있는 작성방식으로 바꾸어도 무방하다.
+    
+
+
+  </script>
+</body>
+
+</html>
