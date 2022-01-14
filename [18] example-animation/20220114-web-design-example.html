@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      /* 스크롤 안보이게 하려고 속성 설정 */
+      overflow: hidden;
+    }
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+    /* basic styling */
+    #container {
+      width: 100vw;
+      height: 100vh;
+      /* border: 1px solid red; */
+      transition: 1s;
+      /* 가운데 컨텐츠 영역이 위치하도록 사이즈 설정(기준점) 과 아래의 flex 셋팅 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* test (셋업할때 영역확인하려고 설정) */
+    #title {
+      /* width: 500px;
+      height: 500px; */
+      /* border: 1px solid red; */
+    }
+    #title div {
+      width: 300px;
+      height: 50px;
+      /* background: #fff; */
+      /* background: #ddd; */
+      opacity: 1;
+    }
+    #title h1 {
+      width: 300px;
+      /* color: red; */
+      top: 100px;
+      /* border: 1px solid red; */
+    }
+    /* class set */
+    /* 주요 포지션 속성을 클래스로 부여한 것을 주목 */
+    .relative {
+      position: relative;
+    }
+    .absolute {
+      position: absolute;
+    }
+    .transition-1-second {
+      transition: ease-in-out 1s;
+    }
+    .z-index-1 {
+      z-index: 1;
+    }
+    .z-index-2 {
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <!-- 두 자식인 div과 h1 태그를 겹치게 하기 위해 부모에게는 relative를 자식에게는 absolute 속성부여 -->
+    <div id="title" class="relative">
+      <!-- z-index 설정으로 div 태그가 위로 겹치도록 조정 -->
+      <div class="absolute transition-1-second z-index-2"></div>
+      <h1 class="absolute transition-1-second z-index-1">hello</h1>
+    </div>
+  </div>
+
+  <script>
+    // 주요 식별자 초기설정(초기화) initialize 
+    const container = document.querySelector("#container");
+    const title = document.querySelector("#title");
+    const maskShape = document.querySelector("#title div");
+    const contentText = document.querySelector('#title h1');
+    // console 체크를 통해 오류가 없는지 점검 ★★★★★★★★★★★★★★★★★★
+    console.log(contentText);
+
+    // 위로 겹쳐진 div의 높이값을 숫자로 추출한 변수 getHeight
+    // 통상적으로 get 이란 단어는 "값을 가져올때" 이름에 붙이는 관습이 있음
+    let getHeight = maskShape.clientHeight;
+
+    // javascript styling ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // 자바스크립트에서 할당하면 별도로 속성 값을 찾지 않아도 바로 핸들링이 가능
+
+    // container
+    container.style.backgroundColor = "#ddd";
+    // div
+    maskShape.style.backgroundColor = "#ddd";
+    maskShape.style.top = "0px";
+    // h1
+    contentText.style.color = "salmon";
+    contentText.style.top = "0px";
+    contentText.style.left = "0px";
+    contentText.style.letterSpacing = "0px";
+    // 작업하는 과정중에 객체에 무슨 값이, 또 어떻게 있는지 외우지 않고 console로 확인하면 작업한 흔적이며
+    // 콘솔의 값을 확인하는 횟수를 생각해볼것
+    console.dir(maskShape);
+    console.dir(contentText.style);
+    console.log(getHeight);
+    // 이벤트 발생 주체는 body 태그
+    document.body.addEventListener('click', function () {
+      // 수학적 혹은 알고리즘 사고가 필요한 주요 실행 구문
+      contentText.style.top = (getHeight / 2) + "px";
+      // 위에서 div태그의 높이값을 getHeight에 가져왔고 "얼마인진 모르지만 그 값에 절반" 
+      maskShape.style.top = -(getHeight / 2) + "px";
+      // maskShape은 본인 높이값의절반을 반대(-마이너스) 만큼 움직이게 조정함
+      // 동작이 잘되었는지 console로 확인함
+      console.log('done');
+      // 위의 동작이 끝난다음 아래의 동작을 진행하려면 "자바스크립트의 동작원리" 를 이해해야하는데
+      // 결과론적으로는 모든 작업을 순식간에 다 처리해버리기 때문에 나중에 처리하도록 "setTimeout"을 설정함
+      let timer = setTimeout(function () {
+        maskShape.style.display = "none";
+        contentText.style.left = (getHeight) + "px";
+        contentText.style.top = -(getHeight / 2) + "px";
+        contentText.style.letterSpacing = "1rem";
+        console.log("timer-done");
+        let centerAlign = setTimeout(function () {
+          contentText.style.transition = "5s";
+          contentText.style.left = -(getHeight) + "px";
+          contentText.style.color = "#333";
+          container.style.backgroundColor = "#fff";
+        }, 1500);
+        if (contentText.style.left === "50px") {
+          contentText.style.textTransform = "uppercase";
+          contentText.style.fontSize = "3rem";
+        }
+      }, 1500);
+    });
+    // console.dir(contentText);
+  </script>
+</body>
+
+</html>
