@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      width: 1920px;
+      height: 1080px;
+      background-color: gray;
+      position:relative;
+    }
+    #container section {
+      width: 300px;
+      height: 300px;
+      background-color: salmon;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      transition: 1s;
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="container">
+    <section></section>
+  </div>
+
+
+  <script>
+
+    const section = document.querySelector('#container section');
+    console.log(section);
+    console.dir(section);
+    section.style.backgroundColor = "red";
+
+    const colors = ["blue", "pink", "skyblue", "green", "black"];
+
+    let count = 0;
+    let timer = setInterval(function() {
+      // 변수 count가 배열 colors의 길이값(length) 보다 작으면 참이야
+      if(count < colors.length) {
+        // 참이면 중괄호에 있는걸 실행시켜줘
+        section.style.backgroundColor = colors[count];
+        count = count + 1; 
+        // count++; 증가연산자 
+        // count += 1; 복합 대입연산자
+        section.style.marginLeft = count + "%";
+      } else {
+        // 거짓이 되는 건 : count 값이 colors.length(길이값보다 같거나 크면)
+        count = 0;
+      }
+    }, 1000);
+
+
+  </script>
+</body>
+</html>

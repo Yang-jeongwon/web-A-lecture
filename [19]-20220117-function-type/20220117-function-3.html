@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>전아령</li>
+    <li>이주희</li>
+    <li>최종규</li>
+    <li>양정원</li>
+    <li>홍성학</li>
+  </ul>
+  <script>
+    const li = document.querySelectorAll('ul li');
+    console.log(li[li.length-1]);
+    console.dir(li[4]);
+    console.log(li[4].tagName);
+    console.log(li[4].tagName);
+    li[4].outerHTML = "<div>학성혹</div>";
+
+  </script>
+
+</body>
+</html>

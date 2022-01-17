@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 배열 값이 무언인진 모르겠지만 아무튼간에 나는 배열을 만나면 함수를 적용시킬꺼야
+
+    const testArray = ['피카츄', "라이츄", "파이리", "꼬부기", "버터풀"];
+    function test(array) {
+      let currentValue = 0;
+      let timer = setInterval(function() {
+        if(currentValue < array.length) {
+          console.log(array[currentValue]);
+          currentValue++;
+        } else {
+          currentValue = 0;
+        }
+      }, 1000);
+    }
+    test(testArray);
+  </script>
+</body>
+</html>
