@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slide-example-1</title>
+  <style>
+    /* reset */
+    html,
+    body,
+    ul {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      display: block;
+    }
+
+    /* styling */
+    #container {
+      width: 100vw;
+      height: 100vh;
+      /* ul tag positioning */
+      position: relative;
+    }
+
+    #slide {
+      /* ul tag positioning */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* sizing */
+      width: max-content;
+      text-align: center;
+      transition : 1s;
+    }
+
+    #slide li {
+      /* position: relative; */
+      transition: 1s;
+      float: left;
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+    }
+
+    #slide li:nth-child(1) {
+      background-color: #ddd;
+    }
+
+    #slide li:nth-child(2) {
+      background-color: #aaa;
+    }
+
+    #slide li:nth-child(3) {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <ul id="slide">
+      <li>slide-1 width 300px height 300px</li>
+      <li>slide-2 width 300px height 300px</li>
+      <li>slide-3 width 300px height 300px</li>
+    </ul>
+  </div>
+  <script>
+    const slide = document.querySelector("#slide");
+    const slideItems = document.querySelectorAll("#slide li");
+    console.log(slideItems);
+    let count = 0;
+    let getWidth = 300;
+    let setTimer = setInterval(function() {
+      if(count < slideItems.length) {
+
+        // slideItems[count].style.marginLeft = -300 + "px";
+        slide.style.marginLeft = getWidth + "px";
+        getWidth = getWidth + getWidth;
+        count++;
+        console.log(count);
+      } else {
+        slide.style.marginLeft = 0 + "px";
+        getWidth = 300;
+
+        // for(let i = 0; i < slideItems.length; i++) {
+        //   slideItems[i].style.marginLeft = 0 + "px";
+        // }
+        count = 0;
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
