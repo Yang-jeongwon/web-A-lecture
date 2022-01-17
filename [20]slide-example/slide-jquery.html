@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>slide-jquery</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .slide {
+      width: 500px;
+      height: 300px;
+      position: relative;
+      border: 1px solid red;
+    }
+
+    .slide_all {
+      width: 100%;
+    }
+
+    .slide_all li {
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide">
+    <ul class="slide_all">
+      <li>slide-image-1</li>
+      <li>slide-image-2</li>
+      <li>slide-image-3</li>
+    </ul>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("ul.slide_all li").eq(0).siblings().hide();
+      var slideI = 0;
+      setInterval(function () {
+        if (slideI < 2) {
+          slideI++;
+        } else {
+          slideI = 0;
+        }
+        $("ul.slide_all li").eq(slideI).siblings().fadeOut(500);
+        $("ul.slide_all li").eq(slideI).fadeIn(500);
+      });
+      // 예제 링크 : https://m.blog.naver.com/shyu910908/222085834638?view=img_4
+    });
+  </script>
+
+
+</body>
+
+</html>
