@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body, h1 {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width:100vw;
+      height:100vh;
+      /* flex */
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div id="container">
+    <h1>hello design</h1>
+  </div>
+  <script>
+    const h1 = document.querySelector('#container h1');
+
+
+    // javascript styling
+    h1.style.opacity = 0;
+
+    // 알고리즘 구상
+    // 1. opacity는 0에서부터 1까지의 값으로 투명도를 조정한다.
+    // 2. 1초당 0.1씩 증가시키면 조금씩 나타나는 동작을 동적으로 만들 수 있다.
+    // 3. 0인 어떤 값을 0.1 씩 더해지고, 1이 되면 멈춰지는 동작을 시도해 본다.
+
+    let value = 0;
+    value = value + 0.1;
+    console.log(value);
+    
+
+
+    
+  </script>
+
+</body>
+</html>
